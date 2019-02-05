@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>File uploader</title>
+
+    <style media="screen">
+      #button {
+        padding: 10px;
+        color: white;
+        background-color: #009578;
+        border: 1px black;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #button:hover {
+        background-color: #00b28f;
+      }
+
+      #custom {
+        margin-left: 10px;
+        font-family: sans-serif;
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3>File uploader</h3>
+    <input type="file" id="file" hidden>
+    <button type="button" id="button">Choose your file</button>
+    <span id="custom">None chosen</span>
+
+    <script type="text/javascript">
+      const fileButton = document.getElementById('file');
+      const button = document.getElementById('button');
+      const custom = document.getElementById('custom');
+
+      button.addEventListener('click', () => {
+        fileButton.click();
+      });
+
+      fileButton.addEventListener('change', () => {
+        if (fileButton.value) {
+          custom.innerHTML = document.getElementById("file").files[0].name
+        } else {
+          custom.innerHTML = "None chosen";
+        }
+      });
+    </script>
+  </body>
+</html>
