@@ -1,0 +1,19 @@
+const arr = [1,2,3,1,2,3];
+
+const uniqueArr = new Set(arr);
+
+const backToArr = [...uniqueArr];
+
+
+OR
+
+Array.from(new Set(arr));
+
+
+
+arr.filter((item, index) => {
+  return arr.indexOf(item) === index;
+})
+
+
+arr.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
