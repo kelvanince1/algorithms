@@ -34,18 +34,18 @@ class Node {
   }
 
   nextNode(data) {
-	const node = this.contains(data);
+  	const node = this.contains(data);
 
-	if (!node) {
-		return null;
-    }
+  	if (!node) {
+  		return null;
+      }
 
-	if (node.left) {
-		return node.left
-    } else if (node.right) {
-		return node.right
-    } else {
-		return node;
+  	if (node.left) {
+  		return node.left
+      } else if (node.right) {
+  		return node.right
+      } else {
+  		return node;
     }
   }
 }
