@@ -15,5 +15,6 @@ arr.filter((item, index) => {
   return arr.indexOf(item) === index;
 })
 
+OR
 
 arr.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
