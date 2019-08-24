@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kelvanince1/algorithms/issues"
   },
-  "homepage": "https://github.com/kelvanince1/algorithms#readme"
+  "homepage": "https://github.com/kelvanince1/algorithms#readme",
+  "dependencies": {
+    "cloud-portal-library": "^1.0.5"
+  }
 }
