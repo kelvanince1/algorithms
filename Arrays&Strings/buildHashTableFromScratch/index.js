@@ -36,6 +36,18 @@ class HashTable {
 
         return undefined;
     }
+
+    keys() {
+        const keysArr = [];
+
+        for (let i = 0; i < this.data.length; i++) {
+            if (this.data[i]) {
+                keysArr.push(this.data[i][0][0]);
+            }
+        }
+
+        return keysArr;
+    }
 }
 
 const myHashTable = new HashTable(50);
