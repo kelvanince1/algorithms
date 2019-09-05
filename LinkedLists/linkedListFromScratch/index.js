@@ -71,10 +71,20 @@ class LinkedList {
 
         const node = new Node(value);
         
-        let prev = this.getAt(index - 1);
+        const prev = this.getAt(index - 1);
         const next = prev.next;
         prev.next = node;
         node.next = next;
         this.length++;
+    }
+
+    remove(index) {
+        if (index > this.length) {
+            return 'This index is not in the list';
+        }
+
+        const prev = this.getAt(index - 1);
+        prev.next = prev.next.next;
+        this.length--;
     }
 }
