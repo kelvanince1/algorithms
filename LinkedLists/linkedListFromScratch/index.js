@@ -12,7 +12,6 @@ class LinkedList {
             next: null
         }
 
-        this.tail = this.head;
         this.length = 1;
     }
 
@@ -31,18 +30,29 @@ class LinkedList {
         }
     }
 
+
+    getAt(index) {
+        let node = this.head;
+        let counter = 0;
+
+        while(counter !== index) {
+            node = node.next;
+            counter++;
+        }
+
+        return node;
+    }
+
     append(value) {
         if (!this.head) {
             this.head.value = value;
         }
 
-        const node = new Node(value);
-        node.next = {
-            value: value,
-            next: null
-        }
+        let last = this.getLast();
 
-        this.tail = node.next;
+        const node = new Node(value);
+        last.next = node;
+
         this.length++;
     }
 
@@ -51,6 +61,20 @@ class LinkedList {
         node.next = this.head;
 
         this.head = node;
+        this.length++;
+    }
+
+    insert(index, value) {
+        if (index >= this.length) {
+            return this.append(value);
+        }
+
+        const node = new Node(value);
+        
+        let prev = this.getAt(index - 1);
+        const next = prev.next;
+        prev.next = node;
+        node.next = next;
         this.length++;
     }
 }
