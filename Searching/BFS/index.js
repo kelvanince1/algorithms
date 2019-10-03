@@ -158,6 +158,7 @@ class BinarySearchTree {
         }
 
         let current = this.queue.shift();
+        list.push(current.value);
 
         if (current.left) {
             queue.push(current.left);
