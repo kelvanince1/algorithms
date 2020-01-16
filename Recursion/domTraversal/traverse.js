@@ -5,7 +5,7 @@ console.log(header);
 console.log(headerParent);
 
 var content = document.getElementById('letters');
-var middle = document.getElementsByClassName('aaa');
+var middle = document.getElementById('aaa');
 
 var contentChildren = content.children;
 var contentChildNodes = content.childNodes;
@@ -21,15 +21,13 @@ console.log('LAST CHILD!!!', contentLastChild);
 console.log('LAST CHILD ELE!!!', contentLastChildEl);
 console.log('FIRST CHILD ELE', contentFirstChildEl);
 
-console.log(middle);
+var middlePrevNode = middle.previousSibling;
+var middleNextNode = middle.nextSibling;
+var middlePrevEl = middle.previousElementSibling;
+var middleNextEl = middle.nextElementSibling;
 
-var contentPrevNode = content.previousSibling;
-var contentNextNode = content.nextSibling;
-var contentPrevEl = content.previousElementSibling;
-var contentNextEl = content.nextElementSibling;
-
-console.log('PREV SIB', contentPrevNode);
-console.log('NEXT SIB', contentNextNode);
-console.log('PREV ELE', contentPrevEl);
-console.log('NEXT ELE', contentNextEl);
+console.log('PREV SIB', middlePrevNode);
+console.log('NEXT SIB', middleNextNode);
+console.log('PREV ELE', middlePrevEl);
+console.log('NEXT ELE', middleNextEl);
 
