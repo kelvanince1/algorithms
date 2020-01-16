@@ -18,3 +18,13 @@ docFrag.appendChild(p2El);
 docFrag.appendChild(p3El);
 
 divParent.appendChild(docFrag);
+
+var divParent2 = document.getElementById('aaa');
+
+var firstP = divParent2[0];
+var pText = document.createTextNode('Newum');
+var pEl = document.createElement('p');
+var divEl1 = document.createElement('div');
+
+pEl.appendChild(pText);
+divParent2.insertBefore(pEl, firstP);
