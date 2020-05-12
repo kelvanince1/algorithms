@@ -17,15 +17,11 @@ function steps(s) {
 
 	for (let i = 0; i < binary.length; i++) {
 		if (binary[i] == 1) {
-            console.log('VALUE BF', value);
 			value += multiplier;
-            console.log('VALUE AF', value);
 		}
 
 		multiplier *= 2;
 	}
-
-    console.log('VALUE', value);
 
 	while (value > 1) {
 		if (value % 2 === 0) {
