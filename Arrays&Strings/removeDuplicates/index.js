@@ -18,3 +18,10 @@ arr.filter((item, index) => {
 OR
 
 arr.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
+
+const result = [];
+for (let i = 0; i < arr.length; i++) {
+    if (arr.indexOf(arr[i]) === i) {
+        result.push(arr[i]);
+    }
+}
