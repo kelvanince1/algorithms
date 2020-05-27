@@ -6,7 +6,7 @@ function balancePoints(array) {
     var totalSum = array.reduce((prev, curr) => {
       return prev + curr;
     });
-    console.log('TOTAL SUM', totalSum);
+    
     var leftSum = 0;
   
     return array.reduce(function(points, current, i) {
