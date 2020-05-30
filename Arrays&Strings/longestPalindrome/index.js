@@ -24,3 +24,19 @@ function longestPalindrome(s) {
     }
     return result;
 }
+
+
+function longestPal(str) {
+    let result = '';    
+    for (let i = 0; i < str.length; i++) {
+        let tmp = str[i];
+        for (let j = i + 1; j < str.length; j++) {
+            tmp += str[j];
+
+            if (tmp.split('').reverse().join('') === tmp && tmp.length > result.length) {
+                  result = tmp;
+            }
+        }
+    }
+    return result;
+}
