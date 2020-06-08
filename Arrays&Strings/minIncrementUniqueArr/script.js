@@ -21,26 +21,23 @@
 function minIncrement(arr) {
     const obj = {};
     let counter = 0;
-    let unique = true;
     
-    for (let ele of arr) {
-        if (obj[ele]) {
-            obj[ele]++;
-        } else {
-            obj[ele] = 1;
+    (function() {
+        let unique = true;
+    
+        for (let ele of arr) {
+            if (obj[ele]) {
+                obj[ele]++;
+                unique = false;
+            } else {
+                obj[ele] = 1;
+            }
         }
-    }
 
-    for (let ele in obj) {
-        if (obj[ele] > 1) {
-            unique = false;
-            break;
+        if (unique) {
+            return counter;
         }
-    }
-
-    if (unique) {
-        return counter;
-    }
+    })();
     
     for (let i = 0; i < arr.length; i++) {
         let curr = arr[i];
