@@ -23,7 +23,7 @@
 
 
 function keysRooms(rooms) {
-    const roomsCopy = rooms;
+    const roomsCopy = [...rooms];
     const keysArr = [];
     
     if (roomsCopy[0].length) {
@@ -37,7 +37,9 @@ function keysRooms(rooms) {
         }
         
         keysArr.push(...roomsCopy[i]);
-        rooms[i].push('Unlocked');
+        roomsCopy[i].push('Unlocked');
+
+        roomsCopy[i].forEach(key => keysArr.includes(key) && key !== 'Unlocked' ? rooms[key].push('Unlocked') : '');
     }
     
     for (let ele of roomsCopy) {
