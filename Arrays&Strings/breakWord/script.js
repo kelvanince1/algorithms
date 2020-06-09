@@ -1,5 +1,5 @@
-// Write a program that breaks up a string of words with no spaces into a string with
-// appropriate spaces.
+// Write a program that breaks up a string of words with no spaces into a string 
+//with appropriate spaces.
 
 function breakWord(str) {
     const words = {
