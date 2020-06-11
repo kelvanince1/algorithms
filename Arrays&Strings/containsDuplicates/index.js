@@ -18,8 +18,9 @@ var containsDuplicate = function(nums) {
 
 
 for (let i = 0; i < arr.length; i++) {
-    console.log('IndexOf', arr.indexOf(arr[i]));
     if (i !== arr.indexOf(arr[i])) {
-        console.log('Duplicates found', arr[i]);
+        return 'Duplicates found';
     }
+
+    return 'No duplicates';
 }
