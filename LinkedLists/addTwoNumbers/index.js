@@ -23,3 +23,39 @@ function addTwoNumbers(l1, l2) {
 
     return finalResult.split('').reverse();
 }
+
+
+// Alternative
+function addTwoNums(list1, list2) {
+    let reslist1 = '';
+    let reslist2 = '';
+
+    let list1Head = list1.head;
+    let list2Head = list2.head;
+    
+    while (list1Head.data) {
+        reslist1 += list1Head.data;
+
+        if (!list1Head.next) {
+            break;
+        }
+
+        list1Head = list1Head.next;
+    }
+
+    while (list2Head.data || list2Head.data === 0) {
+        console.log('LIST HEAD DATA', list2Head.data);
+        reslist2 += list2Head.data;
+
+        if (!list2Head.next) {
+            break;
+        }
+
+        list2Head = list2Head.next;
+    }
+
+    reslist1 = reslist1 * 1;
+    reslist2 = reslist2 * 1;
+
+    return reslist1 + reslist2;
+}
