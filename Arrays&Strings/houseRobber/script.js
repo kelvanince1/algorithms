@@ -42,3 +42,17 @@ function robbed(nums) {
         return cache[i];
     }
 }
+
+// Iterative
+function rob(nums) {
+    let current = 0;
+    let prev = 0;
+    
+    for (let ele of nums) {
+        let tmp = current;
+        current = Math.max(prev + ele, current);
+        prev = tmp;
+    }
+    
+    return Math.max(current, prev);
+}
