@@ -15,16 +15,30 @@
 // Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
 //              Total amount you can rob = 1 + 3 = 4.
 
-// Iterative
-function houseRobber(nums) {
-    let counter = 0;
+// Bottom Up approach
+function robber(nums) {
+    const cache = [];
     
-    for (let i = 0; i < nums.length; i++) {
-        if (i % 2 === 0 || i === 0) {
-            console.log(nums[i])
-            counter += nums[i];
-        }
+    cache[0] = 0;
+    cache[1] = nums[0];
+    
+    for (let i = 1; i < nums.length; i++) {
+        cache[i+1] = Math.max(cache[i], cache[i-1] + nums[i]);
     }
     
-    return counter;
+    return cache[nums.length];
+}
+
+// Top Down
+function robbed(nums) {
+    const cache = [];
+    
+    return function inner(i) {
+        if (i >= nums.length) return 0;
+        
+        if (cache[i]) return cache[i];
+        
+        cache[i] = Math.max(inner(i + 2) + nums[i], inner(i + 1));
+        return cache[i];
+    }
 }
