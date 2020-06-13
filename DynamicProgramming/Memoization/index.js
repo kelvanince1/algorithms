@@ -15,4 +15,3 @@ function memoizedAddTo80(n) {
 const memoized = memoizedAddTo80();
 
 console.log(memoized(5));
-console.log(memoized(5));
