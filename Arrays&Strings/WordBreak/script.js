@@ -6,9 +6,7 @@ function wordBreak(str, dict) {
         res += str[i];
         
         if (dict.includes(res)) {
-            console.log('RES', res);
             strCopy = str.slice(i + 1, str.length);
-            console.log('STR', str);
             res = '';
         }
     }
