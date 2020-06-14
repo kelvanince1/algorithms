@@ -22,7 +22,6 @@ function pathSum(tree, target) {
      function helper(node, counter) {
          if (!node) return;
          counter += node.data;
-         console.log('counter', counter);
          if (!node.left && !node.right) {
              if (counter === target) {
                  result = true;
