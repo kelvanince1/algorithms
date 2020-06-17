@@ -13,3 +13,11 @@
 function addDigits(num) {
     return (num % 9 === 0) ? 9 : num % 9
 };
+
+
+// Alternative
+function addDigits(num) {
+    const nums = num.toString().split('');
+    
+    return nums.length === 1 ? num : addDigits(nums.reduce((a,b) => parseInt(a) + parseInt(b)));
+}
