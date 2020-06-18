@@ -12,7 +12,7 @@ function masterMind(solution, guess) {
     let hitCount = 0;
     let pseudoHitCount = 0;
 
-    const holder = Array(solution.length).fill(null);
+    const holder = [];
     
     for (let i = 0; i < solution.length; i++) {
         for (let j = 0; j < guess.length; j++) {
