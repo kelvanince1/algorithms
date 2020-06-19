@@ -158,3 +158,20 @@ class LinkedList {
 }
 
 module.exports = { Node, LinkedList };
+
+
+const l1 = new LinkedList();
+l1.insertLast(1);
+l1.insertLast(4);
+l1.insertLast(7);
+l1.insertLast(10);
+const l2 = new LinkedList();
+l2.insertLast(2);
+l2.insertLast(5);
+l2.insertLast(8);
+l2.insertLast(11);
+const l3 = new LinkedList();
+l3.insertLast(3);
+l3.insertLast(6);
+l3.insertLast(9);
+l3.insertLast(12);
